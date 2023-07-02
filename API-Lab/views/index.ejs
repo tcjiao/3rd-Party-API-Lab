@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuck Norris Jokes</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Chuck Norris Jokes</h1>
+    <form action="/joke" method="GET">
+      <h3>Select a Category:</h3>
+      <% categories.forEach(function(category) { %>
+        <label>
+          <input type="radio" name="category" value="<%= category %>">
+          <%= category %>
+        </label>
+        <br>
+      <% }) %>
+      <br>
+      <button type="submit">Get Chuck Norris Joke</button>
+    </form>
+    <% if (joke) { %>
+      <p><%= joke %></p>
+    <% } %>
+  </body>
+</html>
